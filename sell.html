@@ -5,43 +5,49 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Post a second-hand textbook, calculator, laptop or furniture for sale on CampusMart, the student marketplace." />
   <title>Sell an item - CampusMart</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header>
-    <a href="index.html"><strong>CampusMart</strong></a>
+  <header class="site-header">
+    <a href="index.html" class="logo">CampusMart</a>
     <nav aria-label="Main">
-      <ul>
+      <ul class="nav-links">
         <li><a href="index.html">Browse</a></li>
-        <li><a href="sell.html" aria-current="page">Sell an item</a></li>
-        <li><a href="index.html#about">About</a></li>
+        <li><a href="sell.html" class="btn" aria-current="page">Sell an item</a></li>
+        <li><a href="about.html">About</a></li>
       </ul>
     </nav>
   </header>
 
-  <main>
+  <main class="container">
     <h1>Sell an item</h1>
-    <p>Fill in the form below to list an item. Buyers will contact you by email.</p>
+    <p style="margin-bottom: 2rem;">Fill in the form below to list an item. Buyers will contact you by email.</p>
 
     <form action="/api/listings" method="post" enctype="multipart/form-data" autocomplete="off">
-      <p>
+      
+      <div class="form-group">
         <label for="title">Title</label>
-        <input id="title" name="title" type="text"
-               required minlength="5" maxlength="100"
-               pattern=".*[^0-9].*"
-               placeholder="e.g. Casio fx-991EX scientific calculator" />
-      </p>
+        <input id="title" name="title" type="text" required minlength="5" maxlength="100" pattern=".*[^0-9].*" placeholder="e.g. Casio fx-991EX scientific calculator" />
+      </div>
 
-      <p>
-        <label for="category">Category</label>
-        <select id="category" name="category" required>
-          <option value="">Choose a category</option>
-          <option value="books">Books</option>
-          <option value="electronics">Electronics</option>
-          <option value="furniture">Furniture</option>
-          <option value="clothing">Clothing</option>
-          <option value="stationery">Stationery</option>
-        </select>
-      </p>
+      <!-- Activity Task 3: Grid for side-by-side on Desktop -->
+      <div class="form-row">
+        <div>
+          <label for="category">Category</label>
+          <select id="category" name="category" required>
+            <option value="">Choose a category</option>
+            <option value="books">Books</option>
+            <option value="electronics">Electronics</option>
+            <option value="furniture">Furniture</option>
+            <option value="clothing">Clothing</option>
+            <option value="stationery">Stationery</option>
+          </select>
+        </div>
+        <div>
+          <label for="price">Price (Rs)</label>
+          <input id="price" name="price" type="number" required min="50" step="1" placeholder="e.g. 4500" />
+        </div>
+      </div>
 
       <fieldset>
         <legend>Condition</legend>
@@ -51,34 +57,25 @@
         <label><input type="radio" name="condition" value="FAIR" /> Fair</label>
       </fieldset>
 
-      <p>
-        <label for="price">Price (Rs)</label>
-        <input id="price" name="price" type="number"
-               required min="50" step="1"
-               placeholder="e.g. 4500" />
-      </p>
-
-      <p>
+      <div class="form-group">
         <label for="description">Description</label>
-        <textarea id="description" name="description"
-                  required minlength="20" rows="6"
-                  placeholder="Describe the condition, age and any flaws."></textarea>
-      </p>
+        <textarea id="description" name="description" required minlength="20" rows="6" placeholder="Describe the condition, age and any flaws."></textarea>
+      </div>
 
-      <p>
+      <div class="form-group">
         <label for="photo">Photo</label>
         <input id="photo" name="photo" type="file" accept="image/*" />
-      </p>
+      </div>
 
-      <p>
+      <div class="form-group" style="display: flex; align-items: center; margin-bottom: 2rem;">
         <input id="confirm" name="confirm" type="checkbox" required />
-        <label for="confirm">I confirm this item is mine to sell</label>
-      </p>
+        <label for="confirm" style="margin-bottom: 0;">I confirm this item is mine to sell</label>
+      </div>
 
       <button type="submit">Publish listing</button>
     </form>
 
-    <section aria-labelledby="fees-heading">
+    <section aria-labelledby="fees-heading" style="margin-top: 3rem;">
       <h2 id="fees-heading">Selling fees</h2>
       <table>
         <caption>Listing fees on CampusMart</caption>

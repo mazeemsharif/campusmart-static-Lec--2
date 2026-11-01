@@ -5,49 +5,58 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Buy and sell second-hand items on campus." />
   <title>CampusMart - Buy & sell on campus</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header>
-    <a href="index.html"><strong>CampusMart</strong></a>
+  <header class="site-header">
+    <a href="index.html" class="logo">CampusMart</a>
     <nav aria-label="Main">
-      <ul>
+      <ul class="nav-links">
         <li><a href="index.html" aria-current="page">Browse</a></li>
-        <li><a href="sell.html">Sell an item</a></li>
+        <li><a href="sell.html" class="btn">Sell an item</a></li>
         <li><a href="about.html">About</a></li>
       </ul>
     </nav>
   </header>
 
-  <main>
-    <section>
+  <main class="container">
+    <!-- Hero Section -->
+    <div class="hero">
       <h1>Buy &amp; sell on campus</h1>
       <p>Textbooks, calculators, furniture and more - from students, for students.</p>
-      <a href="sell.html">Start selling</a>
-    </section>
+      <a href="sell.html" class="btn" style="padding: 0.75rem 1.5rem; font-size: 1.1rem;">Start selling</a>
+    </div>
 
     <section aria-labelledby="latest-heading">
       <h2 id="latest-heading">Latest listings</h2>
       
-      <article>
-        <img src="https://placeholder.co/400x300?text=Calculator" alt="Casio fx-991EX calculator" width="400" height="300" />
-        <h3>Casio fx-991EX Calculator</h3>
-        <p><strong>Rs 4,500</strong> - Electronics - Good condition</p>
-        <p>Works perfectly, comes with its cover.</p>
-        <a href="#">View details</a>
-      </article>
+      <!-- Grid Wrapper -->
+      <div class="listing-grid">
+        <article class="card">
+          <!-- Featured Badge -->
+          <span class="badge">Featured</span>
+          <img src="https://placeholder.co/400x300?text=Calculator" alt="Casio fx-991EX calculator" width="400" height="300" />
+          <div class="card-body">
+            <h3>Casio fx-991EX Calculator</h3>
+            <p class="price">Rs 4,500</p>
+            <p class="meta">Electronics · Good condition</p>
+          </div>
+        </article>
 
-      <article>
-        <img src="https://placeholder.co/400x300?text=CLRS" alt="Introduction to Algorithms textbook" width="400" height="300" />
-        <h3>Introduction to Algorithms (CLRS)</h3>
-        <p><strong>Rs 3,500</strong> - Books - Like new</p>
-        <p>3rd edition with minimal highlighting.</p>
-        <a href="#">View details</a>
-      </article>
+        <article class="card">
+          <img src="https://placeholder.co/400x300?text=CLRS" alt="Introduction to Algorithms textbook" width="400" height="300" />
+          <div class="card-body">
+            <h3>Introduction to Algorithms (CLRS)</h3>
+            <p class="price">Rs 3,500</p>
+            <p class="meta">Books · Like new</p>
+          </div>
+        </article>
+      </div>
     </section>
 
-    <section id="about">
+    <section id="about" style="margin-top: 3rem;">
       <h2>How it works</h2>
-      <ol>
+      <ol style="padding-left: 1.5rem;">
         <li>Create a free account with your university email.</li>
         <li>Post a photo, price and description.</li>
         <li>Meet the buyer safely on campus.</li>
